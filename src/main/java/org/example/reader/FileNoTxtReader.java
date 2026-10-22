@@ -1,17 +1,17 @@
-package org.example;
+package org.example.reader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
 
-public class FileTxtReader {
+public class FileNoTxtReader {
     private final String fileNameWay;
 
-    public FileTxtReader(String fileNameWay) {
+    public FileNoTxtReader(String fileNameWay) {
         this.fileNameWay = fileNameWay;
     }
 
-    public List<String> readFile() throws IOException{
+    public List<String> readFileNoTxt() throws IOException{
         return Files.readAllLines(Path.of(fileNameWay));
 
     }

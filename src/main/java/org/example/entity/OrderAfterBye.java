@@ -1,4 +1,5 @@
-package org.example;
+package org.example.entity;
+
 public class OrderAfterBye {
     private final Order order;
     private final Double price;

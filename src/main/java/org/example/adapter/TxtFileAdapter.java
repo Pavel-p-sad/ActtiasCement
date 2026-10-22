@@ -1,11 +1,13 @@
-package org.example;
-import java.io.File;
+package org.example.adapter;
+import org.example.reader.FileTxtReader;
+import org.example.entity.Order;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDateTime;
 
-public class TxtFileAdapter implements  OrderSource {
+public class TxtFileAdapter implements OrderSource {
     private final FileTxtReader reader;
 
     public TxtFileAdapter(FileTxtReader reader) {

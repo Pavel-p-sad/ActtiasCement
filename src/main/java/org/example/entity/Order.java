@@ -1,4 +1,4 @@
-package org.example;
+package org.example.entity;
 import java.time.LocalDateTime;
 public class Order {
     private final LocalDateTime date;

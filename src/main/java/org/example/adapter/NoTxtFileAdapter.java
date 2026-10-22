@@ -1,10 +1,13 @@
-package org.example;
+package org.example.adapter;
+import org.example.reader.FileNoTxtReader;
+import org.example.entity.Order;
+
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NoTxtFileAdapter implements OrderSource{
+public class NoTxtFileAdapter implements OrderSource {
     private final FileNoTxtReader reader;
     public NoTxtFileAdapter(FileNoTxtReader reader) {
         this.reader = reader;

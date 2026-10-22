@@ -1,4 +1,4 @@
-package org.example;
+package org.example.service;
 public class PriseCalculate {
     private double startSale;
     private double stepSale;

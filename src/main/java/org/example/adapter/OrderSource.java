@@ -1,4 +1,6 @@
-package org.example;
+package org.example.adapter;
+import org.example.entity.Order;
+
 import java.io.IOException;
 import java.util.List;
 
