@@ -17,4 +17,3 @@ public class SummOrderCompany {
         return map;
     }
 }
-

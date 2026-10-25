@@ -26,7 +26,7 @@ public class Main {
                 allOrders.addAll(sq.read());
             }
             allOrders.sort(Comparator.comparing(Order::getDate));
-            PriseCalculate price = new PriseCalculate( new BigDecimal("0.6"), new BigDecimal("0.07"),new BigDecimal("50"));
+            PriseCalculate price = new PriseCalculate( new BigDecimal("0.6"), new BigDecimal("0.07"),new BigDecimal("12"));
             List<OrderAfterBye> allOrdersAfterPrice = new ArrayList<>();
             for (Order order : allOrders){
                 allOrdersAfterPrice.add(
@@ -38,7 +38,7 @@ public class Main {
                 );
             }
             Map<String, BigDecimal> itog = SummOrderCompany.getIterOrders (allOrdersAfterPrice);
-            FileResultWriter writer = new FileResultWriter(itog);
+            FileResultWriter writer = new FileResultWriter(itog, "---");
             writer.fileWriteMap();
         } catch (Exception e) {
             e.printStackTrace();
