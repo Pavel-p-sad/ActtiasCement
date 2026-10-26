@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public class FileResultWriter {
-    Map<String, BigDecimal> map;
+    private final Map <String, BigDecimal> map;
     private final String DECORATOR;
     private static final String FILE_PATH = "src/main/resources/result.txt";
 
@@ -17,17 +17,13 @@ public class FileResultWriter {
         this.DECORATOR = DECORATOR;
     }
 
-    public void fileWriteMap() {
-        List<String> Itog =  new ArrayList<>();
+    public void fileWriteMap() throws  IOException {
+        List<String> itog =  new ArrayList<>();
         for (Map.Entry<String, BigDecimal> e : map.entrySet()) {
             String company = e.getKey();
             BigDecimal summ = e.getValue();
-            Itog.add(company + DECORATOR + summ);
+            itog.add(company + DECORATOR + summ);
         }
-        try {
-            Files.write(Path.of(FILE_PATH), Itog);
-        }  catch (IOException e) {
-            e.printStackTrace();
-        }
+        Files.write(Path.of(FILE_PATH), itog);
     }
 }

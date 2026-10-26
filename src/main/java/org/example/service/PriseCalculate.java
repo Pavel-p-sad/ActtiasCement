@@ -14,11 +14,11 @@ public class PriseCalculate {
         this.sale = startSale;
     }
     public BigDecimal calcPrice(BigDecimal amount) {
-        if (sale.compareTo(BigDecimal.ZERO) > 0 && sale.subtract(stepSale).compareTo(BigDecimal.ZERO) >= 0) {
+        if (sale.signum() > 0 && sale.subtract(stepSale).signum() >= 0) {
             BigDecimal result = allPrise.multiply(amount).multiply(BigDecimal.ONE.subtract(sale));
             sale = sale.subtract(stepSale);
             return result;
-        } else if (sale.compareTo(BigDecimal.ZERO) > 0 && sale.subtract(stepSale).compareTo(BigDecimal.ZERO) < 0) {
+        } else if (sale.signum() > 0 && sale.subtract(stepSale).signum() < 0) {
             BigDecimal result = allPrise.multiply(amount).multiply(BigDecimal.ONE.subtract(sale));
             sale = BigDecimal.ZERO;
             return result;
